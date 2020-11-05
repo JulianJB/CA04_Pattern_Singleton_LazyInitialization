@@ -1,15 +1,23 @@
+/**
+ * This example aims to simulate the behavior of the registry editor
+ * from Windows-based operating systems. The singleton pattern is applied
+ * to guarantee that only a single instance of the system registry is
+ * created as the possibility to have multiple copies of the system registry
+ * may lead to inconsistencies and other issues.
+ */
+
 class Runner {
 
     public static void main(String[] args) {
 
-        // Create attendees for the party
-        ChristmasParty attendee1 = ChristmasParty.getInstance();
-        ChristmasParty attendee2 = ChristmasParty.getInstance();
+        // Create the user windows of the registry editor
+        SystemRegistry regeditWindow1 = SystemRegistry.getInstance();
+        SystemRegistry regeditWindow2 = SystemRegistry.getInstance();
 
-        // Print the attendees confirmed for the party,
-        // notice how they are attending the same Christmas party.
-        System.out.println("There is an attendee for the party: "  + attendee1); // :ChristmasParty@53d8d10a
-        System.out.println("There is another attendee for the party: " + attendee2); // :ChristmasParty@53d8d10a
+        // Print the active user windows for the registry editor,
+        // notice how they are editing the same system registry file.
+        System.out.println("A user is editing the registry file: "  + regeditWindow1); // :SystemRegistry@a1b23c4
+        System.out.println("Another user is editing the registry file: " + regeditWindow2); // :SystemRegistry@a1b23c4
 
         System.exit(0);
     }
