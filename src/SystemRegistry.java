@@ -27,10 +27,4 @@ class SystemRegistry {
     void deleteEntry() {}
 
     void backupRegistry() {}
-
-    @Override
-    public String toString() { // Comment this method to see the actual allocation in memory
-        // Return the name of the system registry file
-        return "mypc1/HKEY_LOCAL_MACHINE";
-    }
 }
